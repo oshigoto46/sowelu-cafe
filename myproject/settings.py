@@ -31,6 +31,11 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Application definition
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # 静的ファイルがあるディレクトリ
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'attendance', #勤務簿
+    'inventory', #在庫管理
 ]
 
 MIDDLEWARE = [

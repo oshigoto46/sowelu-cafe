@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.inventory-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.inventory-table th {
+    background-color: #f1f1f1;
+    color: #333;
+    font-weight: bold;
+}
+
+.inventory-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.inventory-table tr:hover {
+    background-color: #f0f8ff;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ month_name }} {{ year }} の勤務カレンダー</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            height: 100px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    {% load custom_filters %}
+    <h1>{{ month_name }} {{ year }} の勤務カレンダー</h1>
+    <table>
+        <tr>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+            <th>日</th>
+        </tr>
+        <tr>
+        {% for day in days %}
+            {% if day == 0 %}
+                <td></td>
+            {% else %}
+                <td>
+                    <strong>{{ day }}</strong><br>
+                    {% for name in attendance_dict %}
+                        {{ name }}<br>
+                    {% endfor %}
+                </td>
+            {% endif %}
+            {% if forloop.counter|divisibleby:7 %}
+                </tr><tr>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    </table>
+</body>
+</html>

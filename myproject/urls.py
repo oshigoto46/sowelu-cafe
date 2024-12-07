@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', views.home_view, name='home'),  # トップページのルート
+    path('attendance/', include('attendance.urls')),  # 勤務登録用のURL
 ]

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在庫一覧</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>在庫一覧</h1>
+    <div class="button-container">
+        <a href="{% url 'inventory_add' %}" class="button">新規登録</a>
+    </div>
+    <table class="inventory-table">
+        <thead>
+            <tr>
+                <th>商品コード</th>
+                <th>商品名</th>
+                <th>カテゴリ</th>
+                <th>単価</th>
+                <th>卸業者</th>
+                <th>在庫数</th>
+                <th>最小在庫数</th>
+                <th>単位</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.code }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.supplier }}</td>
+                <td>{{ item.current_stock }}</td>
+                <td>{{ item.min_stock }}</td>
+                <td>{{ item.unit }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

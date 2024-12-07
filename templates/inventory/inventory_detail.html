@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Detail</title>
+</head>
+<body>
+    {% if item %}
+        <h1>{{ item.name }}</h1>
+        <p>Price: {{ item.price }} 円</p>
+        <p>Quantity: {{ item.quantity }} {{ item.unit }}</p>
+    {% else %}
+        <h1>Item not found</h1>
+    {% endif %}
+</body>
+</html>
